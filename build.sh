@@ -41,7 +41,7 @@ chmod +x ../bundle_dlls.sh
 echo -e "${BOLD}Building zip file...${RESET}"
 mkdir -p luantiserver-${VERSION}-msys2-win64/{textures,games}
 
-cp -r bin/ builtin/ mods/ worlds/ luantiserver-${VERSION}-msys2-win64/
+cp -r bin/ builtin/ doc/ mods/ worlds/ luantiserver-${VERSION}-msys2-win64/
 cp textures/texture_packs_here.txt luantiserver-${VERSION}-msys2-win64/textures/
 
 zip -r9 luantiserver-${VERSION}-msys2-win64.zip luantiserver-${VERSION}-msys2-win64/
