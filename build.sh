@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script is intended to be run in MSYS2 CLANG64
 
-VERSION="5.16.0-rc1"
+VERSION="5.16.0"
 
 BOLD="\x1b[1m"
 GREEN="\x1b[32m"
@@ -39,10 +39,9 @@ chmod +x ../bundle_dlls.sh
 
 # build the zip archive of luantiserver
 echo -e "${BOLD}Building zip file...${RESET}"
-mkdir -p luantiserver-${VERSION}-msys2-win64/{textures,games}
+mkdir luantiserver-${VERSION}-msys2-win64/
 
-cp -r bin/ builtin/ doc/ mods/ worlds/ luantiserver-${VERSION}-msys2-win64/
-cp textures/texture_packs_here.txt luantiserver-${VERSION}-msys2-win64/textures/
+cp -r bin/ builtin/ minetest.conf.example luantiserver-${VERSION}-msys2-win64/
 
 zip -r9 luantiserver-${VERSION}-msys2-win64.zip luantiserver-${VERSION}-msys2-win64/
 
