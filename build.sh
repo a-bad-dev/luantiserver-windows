@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script is intended to be run in MSYS2 CLANG64
 
-VERSION="5.16.1"
+VERSION="$(cat VERSION)"
 
 BOLD="\x1b[1m"
 GREEN="\x1b[32m"
@@ -34,8 +34,7 @@ ninja -j$(nproc)
 
 # bundle DLLs
 echo -e "${BOLD}Bundling DLLs...${RESET}"
-chmod +x ../bundle_dlls.sh
-../bundle_dlls.sh bin/luantiserver.exe bin/
+util/bundle_dlls.sh bin/luantiserver.exe bin/
 
 # build the zip archive of luantiserver
 echo -e "${BOLD}Building zip file...${RESET}"
